@@ -1,6 +1,4 @@
 
-import { STATUS_TYPE } from "../src/consts";
-
 export default async function handler(request, response) {
     try {
         const response = await fetch('https://feeds.bbci.co.uk/news/rss.xml?edition=uk');
