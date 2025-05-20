@@ -5,8 +5,8 @@ export default async function handler(request, response) {
         const data = await res.text();
         
         // Set appropriate headers
-        res.setHeader('Content-Type', 'application/xml');
-        res.setHeader('Cache-Control', 's-maxage=300, stale-while-revalidate');
+        response.setHeader('Content-Type', 'application/xml');
+        response.setHeader('Cache-Control', 's-maxage=300, stale-while-revalidate');
         
         return response.status(200).json(data);
     } catch (error) {
