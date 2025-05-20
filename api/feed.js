@@ -1,8 +1,8 @@
 
 export default async function handler(request, response) {
     try {
-        const response = await fetch('https://feeds.bbci.co.uk/news/rss.xml?edition=uk');
-        const data = await response.text();
+        const res = await fetch('https://feeds.bbci.co.uk/news/rss.xml?edition=uk');
+        const data = await res.text();
         
         // Set appropriate headers
         res.setHeader('Content-Type', 'application/xml');
