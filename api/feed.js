@@ -8,9 +8,9 @@ export default async function handler(request, response) {
         response.setHeader('Content-Type', 'application/xml');
         response.setHeader('Cache-Control', 's-maxage=300, stale-while-revalidate');
         
-        return response.status(200).json(data);
+        return response.status(200).text(data);
     } catch (error) {
         console.error('Error fetching RSS feed:', error)
-        return response.status(500).json({ error: 'Failed to fetch RSS feed' });
+        return response.status(500).text('Failed to fetch RSS feed');
     }
   }
